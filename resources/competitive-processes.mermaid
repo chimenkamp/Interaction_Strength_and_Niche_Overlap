@@ -1,0 +1,28 @@
+---
+title: Competitive
+description: Competition (Both processes suffer from the interaction
+---
+graph LR
+    subgraph "Process A: Cutting"
+        Start1[...] -->  A[Check Coolant Availability]
+        A --> |is available| B[Cut Material]
+        B --> C[Update Coolant Usage]
+        C --> End1[...]
+    end
+
+    subgraph "Database Coolant Management"
+        db[(Database)]
+    end
+
+    subgraph "Process B: Polishing"
+        Start2[...] -->  A1[Check Coolant Availability]
+        A1 --> |is available| B1[Polish Material]
+        B1 --> C1[Update Coolant Usage]
+        C1 --> End2[...]
+    end
+
+    A <-.-> db
+    db <-.-> C
+
+    A1 <-.-> db
+    db <-.-> C1

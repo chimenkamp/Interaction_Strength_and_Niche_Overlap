@@ -1,0 +1,21 @@
+---
+title: Predatory
+description: Both processes benefit from the interaction.
+---
+
+graph LR
+    subgraph "Process A: Assembly"
+        Start1[...] -->  A[Request Preferential \n Conveyor Access]
+        A --> |access given| B[Assemble Components]
+        B --> C[Update Conveyor Status]
+        C --> End1[...]
+    end
+
+    subgraph "Process B: Inspection"
+        Start2[...] -->  A1[Request Conveyor Access]
+        A1 --> C1[Wait for Conveyor Availability]
+        C1 --> G1[Inspect Parts]
+        G1 --> End2[...]
+    end
+
+    C -.-> C1

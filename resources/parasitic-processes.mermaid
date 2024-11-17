@@ -1,0 +1,19 @@
+---
+title: Predatory
+description: Both processes benefit from the interaction.
+---
+
+graph LR
+    subgraph "Process A: Batch Cleaning"
+        Start1[...] -->  A[Clean Parts]
+        A --> B[Offload Heat to Shared Heat Sink]
+        B --> End1[...]
+    end
+
+    subgraph "Process B: Heat Treatment"
+        Start2[...] -->  A1[Check Temperature Stability]
+        A1 --> C1[Perform Heat Treatment]
+        C1 --> End2[...]
+    end
+
+    B -.-> C1

@@ -1,0 +1,19 @@
+---
+title: Amensalism
+description: One process is negatively impacted by another’s actions, while the other remains unaffected
+---
+
+graph LR
+    subgraph "Process A: Welding"
+        Start1[...] -->  A[Weld Components]
+        A --> B[Packing Components]
+        B --> End1[...]
+    end
+
+    subgraph "Process B: Precision Calibration"
+        Start2[...] -->  A1[Calibrate Sensitive Instruments]
+        A1 --> C1[Experience Interference]
+        C1 --> End2[...]
+    end
+
+    A -.-> |electromagnetic interference EMI| C1

@@ -1,0 +1,20 @@
+---
+title: Commensalistic
+description: One process benefits, while the other is unaffected.
+---
+
+graph LR
+    subgraph "Process A: Painting"
+        Start1[...] -->  A[Monitor Humidity Sensor]
+        A --> B[Adjust Paint Settings]
+        B --> C[Paint Components]
+        C --> End1[...]
+    end
+
+    subgraph "Process B: Packaging"
+        Start2[...] -->  A1[Prepare Packaging Materials]
+        A1 --> C1[Package Painted Components]
+        C1 --> End2[...]
+    end
+
+    A -.-> |Use readings| C1

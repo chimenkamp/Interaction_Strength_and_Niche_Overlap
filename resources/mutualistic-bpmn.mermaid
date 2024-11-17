@@ -1,0 +1,24 @@
+---
+title: Mutualistic
+description: Both processes benefit from the interaction.
+---
+
+graph LR
+    subgraph "Process A: Welding"
+        Start1[...] -->  A[Check Robot Availability]
+        A --> |is available| B[Weld components \n on welding robot]
+        B --> C[Report robot availability]
+        C --> D[Package Welded\nComponents]
+        D --> End1[...]
+    end
+
+    subgraph "Process B: Painting"
+        Start2[...] -->  A1[Check Robot Availability]
+        A1 --> |is available| B1[Remodel Robot for \nPainting]
+        B1 --> C1[Paint Components on robot]
+        C1 --> G1[Report robot availability]
+        G1 --> End2[...]
+    end
+
+    C -.-> A1
+    G1 <-.- A
